@@ -1,7 +1,5 @@
 import 'dart:math';
 import '../models/health_metric.dart';
-import '../models/mental_health.dart';
-import '../models/skin_health.dart';
 
 class MockDataService {
   static final Random _random = Random();

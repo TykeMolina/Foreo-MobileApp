@@ -515,7 +515,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
         noteParts.add('Keep effort around RPE 6/10');
       }
       if (hydrationDelta < 0) {
-        noteParts.add('Daily hydration target: ${hydrationTarget} ml');
+        noteParts.add('Daily hydration target: $hydrationTarget ml');
       }
 
       return _WorkoutDayPlan(
@@ -725,7 +725,7 @@ class _PhysicalHealthScreenState extends State<PhysicalHealthScreen> {
               children: [
                 _buildStatChip('HRV', '$hrv ms'),
                 _buildStatChip('Sleep', '$sleep h'),
-                _buildStatChip('Steps', '$steps'),
+                _buildStatChip('Steps', steps),
               ],
             ),
             const SizedBox(height: 16),

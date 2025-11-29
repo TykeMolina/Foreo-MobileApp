@@ -40,12 +40,10 @@ class AppTheme {
         primary: black,
         secondary: darkGray,
         surface: white,
-        background: lightGray,
         error: black,
         onPrimary: white,
         onSecondary: white,
         onSurface: black,
-        onBackground: black,
         onError: white,
       ),
       scaffoldBackgroundColor: white,
@@ -126,8 +124,8 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: white,
         indicatorColor: black,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return const TextStyle(color: white, fontWeight: FontWeight.w600);
           }
           return const TextStyle(
@@ -135,8 +133,8 @@ class AppTheme {
             fontWeight: FontWeight.w500,
           );
         }),
-        iconTheme: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return const IconThemeData(color: white);
           }
           return const IconThemeData(color: mediumGray);
@@ -153,12 +151,10 @@ class AppTheme {
         primary: white,
         secondary: lightGray,
         surface: darkGray,
-        background: black,
         error: white,
         onPrimary: black,
         onSecondary: black,
         onSurface: white,
-        onBackground: white,
         onError: black,
       ),
       scaffoldBackgroundColor: black,
@@ -239,8 +235,8 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: darkGray,
         indicatorColor: white,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return const TextStyle(color: black, fontWeight: FontWeight.w600);
           }
           return const TextStyle(
@@ -248,8 +244,8 @@ class AppTheme {
             fontWeight: FontWeight.w500,
           );
         }),
-        iconTheme: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return const IconThemeData(color: black);
           }
           return const IconThemeData(color: mediumGray);

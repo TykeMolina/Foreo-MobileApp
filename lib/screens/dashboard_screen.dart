@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:foreo_app/l10n/generated/app_localizations.dart';
 import '../services/app_state.dart';
-import '../theme/app_theme.dart';
 import '../widgets/metric_card.dart';
 import '../widgets/health_chart.dart';
 import '../widgets/modern_app_bar.dart';

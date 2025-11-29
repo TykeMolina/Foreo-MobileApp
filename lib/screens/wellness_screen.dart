@@ -39,8 +39,8 @@ class _WellnessScreenState extends State<WellnessScreen> {
   late Map<String, bool> _skinRoutineState;
 
   // Notes and Medications
-  List<Note> _notes = [];
-  List<Medication> _medications = [];
+  final List<Note> _notes = [];
+  final List<Medication> _medications = [];
   final TextEditingController _noteTitleController = TextEditingController();
   final TextEditingController _noteContentController = TextEditingController();
   final TextEditingController _medNameController = TextEditingController();
@@ -253,7 +253,7 @@ class _WellnessScreenState extends State<WellnessScreen> {
     }
   }
 
-  void _handleSendAI() {
+  void _handleSendAI() async{
     if (_aiInputController.text.trim().isEmpty) return;
 
     final userMsg = _aiInputController.text.trim();
@@ -263,14 +263,12 @@ class _WellnessScreenState extends State<WellnessScreen> {
       _aiService.addUserMessage(userMsg);
     });
 
-    Future.delayed(const Duration(milliseconds: 1500), () {
       final appState = Provider.of<AppState>(context, listen: false);
-      final response = _aiService.generateResponse(userMsg, appState);
+      final response = await _aiService.generateResponse(userMsg, appState);
       setState(() {
         _aiService.addBotMessage(response);
         _scrollToBottom();
       });
-    });
   }
 
   void _scrollToBottom() {
